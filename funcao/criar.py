@@ -1,10 +1,11 @@
-from database import db, Usuario
+from database.database import db, Usuario
 
 db.connect()
 
 db.create_tables([Usuario])
 
 def criar_usuario():
+    print('---------------------------------------------------------------------')
     try:
         nome = input('Digite seu nome de usuário: ')
         email = input('Digite seu email: ')
@@ -13,3 +14,6 @@ def criar_usuario():
         print('Usuário criado!')
     except:
         print('Falha ao criar usuário!')
+    print('---------------------------------------------------------------------')
+
+db.close()

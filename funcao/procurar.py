@@ -1,4 +1,4 @@
-from database import db, Usuario
+from database.database import db, Usuario
 
 db.connect()
 
@@ -25,8 +25,9 @@ def procurar_usuario():
         lista_usuarios = Usuario.select()
         print('Usuários cadastrados: ')
         for u in lista_usuarios:
-            print('-', u.id, u.nome, u.email)
+            print('-', 'id: ', u.id, '|Nome:', u.nome, '|Email:', u.email, '|Senha: ', u.senha)
 
+    print('---------------------------------------------------------------------')
     print('De qual forma você quer procurar o usuário? ')
     print('1 - Pelo nome')
     print('2 - Pelo email')
@@ -42,4 +43,6 @@ def procurar_usuario():
         mostrar_todos()
     else:
         print('Escolha nula ou inexistente!')
+    print('---------------------------------------------------------------------')
 
+db.close()

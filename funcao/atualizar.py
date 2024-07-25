@@ -1,4 +1,4 @@
-from database import db, Usuario
+from database.database import db, Usuario
 
 db.connect()
 
@@ -63,6 +63,7 @@ def atualizar_usuário():
         else:
             print('Escolha nula ou inexistente!')
 
+    print('---------------------------------------------------------------------')
     print('Qual dado você deseja atualizar? ')
     print('1 - Nome')
     print('2 - Email')
@@ -78,4 +79,6 @@ def atualizar_usuário():
         atualizar_senha()
     else:
         print('Escolha nula ou inexistente!')
+    print('---------------------------------------------------------------------')
 
+db.close()

@@ -1,4 +1,4 @@
-from database import db, Usuario
+from database.database import db, Usuario
 
 db.connect()
 
@@ -22,6 +22,7 @@ def deletar_usuario():
         except:
             print('Usuário já apagado ou inexistente!')
 
+    print('---------------------------------------------------------------------')
     print('Deseja deletar por qual meio? ')
     print('1 - Pelo nome')
     print('2 - Pelo email')
@@ -34,3 +35,6 @@ def deletar_usuario():
         pelo_email()
     else:
         print('Nome não encontrado!')
+    print('---------------------------------------------------------------------')
+
+db.close()
